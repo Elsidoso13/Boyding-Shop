@@ -187,7 +187,7 @@ $usuario = $_SESSION["id"] ?? null;
     <div class="products-grid">
         <?php foreach ($productos as $row): ?>
             <div class="product-card">
-                <img src="/Productos/images/<?php echo htmlspecialchars($row["archivo"]); ?>" alt="Imagen del producto">
+                <img src="/public/Productos/images/<?php echo htmlspecialchars($row["archivo"]); ?>" alt="Imagen del producto">
                 <div class="product-details">
                     <h3><?php echo htmlspecialchars($row["nombre_producto"]); ?></h3>
                     <p>$<?php echo number_format($row["costo_producto"], 2); ?></p>
@@ -199,7 +199,7 @@ $usuario = $_SESSION["id"] ?? null;
                             Agregar al carrito
                         </button>
                     </form>
-                    <form action="/productos/detalle_producto.php" method="GET">
+                    <form action="/public/productos/detalle_producto.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $row['id_producto']; ?>">
                         <button type="submit">Detalles del producto</button>
                     </form>
