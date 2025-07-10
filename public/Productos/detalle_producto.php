@@ -17,7 +17,7 @@ if (!$result || pg_num_rows($result) === 0) {
 
 $row = pg_fetch_assoc($result);
 
-include '../public/administrador/menu2.php';
+include '/public/administrador/menu2.php';
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +91,7 @@ include '../public/administrador/menu2.php';
         
         <div class="field">
             <label>Código:</label>
-            <span><?php echo $row['codigo ']; ?></span>
+            <span><?php echo $row['codigo']; ?></span>
         </div>
         
         <div class="field">
@@ -101,7 +101,7 @@ include '../public/administrador/menu2.php';
         
         <div class="field">
             <label>Descripción:</label>
-            <span><?php echo $row['descripcion_producto ']; ?></span>
+            <span><?php echo $row['descripcion_producto']; ?></span>
         </div>
         
         <div class="field">
