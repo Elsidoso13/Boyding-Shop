@@ -108,8 +108,8 @@ if (isset($_SESSION['correo'])) {
     <div class="container">
         <!-- Logo central -->
         <div class="center-logo">
-            <a href="/administrador/bienvenido.php">
-                <img src="/administrador/SRC2.png" width="10%" alt="Inicio">
+            <a href="/index.php">
+                <img src="/public/administrador/SRC2.png" width="10%" alt="Inicio">
             </a>
         </div>
 
