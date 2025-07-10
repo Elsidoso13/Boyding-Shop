@@ -175,7 +175,7 @@ $usuario = $_SESSION["id"] ?? null;
 <body>
     <div class="promotions-container">
         <?php
-        $directory = "Promociones/plantillas/";
+        $directory = "/public/Promociones/plantillas/";
         $images = glob($directory . "*.{jpg,png,gif,jpeg}", GLOB_BRACE);
 
         foreach ($images as $image) {
