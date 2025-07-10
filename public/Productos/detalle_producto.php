@@ -17,7 +17,7 @@ if (!$result || pg_num_rows($result) === 0) {
 
 $row = pg_fetch_assoc($result);
 
-include '/public/administrador/menu2.php';
+include '../public/administrador/menu2.php';
 ?>
 
 <!DOCTYPE html>
