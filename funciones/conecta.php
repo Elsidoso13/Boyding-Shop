@@ -1,7 +1,7 @@
 <?php
 function conecta() {
     // Configuración para Render PostgreSQL usando variables de entorno
-    $host = getenv('DB_HOST') ?: 'localhost';
+    $host = getenv('DB_HOST') ?: 'dpg-d1nn2gbe5dus73b2lva0-a';
     $port = getenv('DB_PORT') ?: '5432';
     $dbname = getenv('DB_NAME') ?: 'proyecto_cybh';
     $user = getenv('DB_USER') ?: 'postgrest';
