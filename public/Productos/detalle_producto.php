@@ -1,5 +1,5 @@
 <?php
-require "/funciones/conecta.php";
+require "../funciones/conecta.php";
 $con = conecta();
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
