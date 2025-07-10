@@ -24,7 +24,7 @@ while ($row = pg_fetch_assoc($result)) {
 // Liberar resultado
 pg_free_result($result);
 
-include $_SERVER['DOCUMENT_ROOT'] . '/Pagina/administrador/menu2.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/Pagina/public/administrador/menu2.php';
 
 $usuario = $_SESSION["id"] ?? null;
 ?>
