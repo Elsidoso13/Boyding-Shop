@@ -17,7 +17,7 @@ if (!$result || pg_num_rows($result) === 0) {
 
 $row = pg_fetch_assoc($result);
 
-include '../public/administrador/menu2.php';
+include '../administrador/menu2.php';
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +124,7 @@ include '../public/administrador/menu2.php';
         </div>
         
         <div class="button-container">
-            <button onclick="window.location.href='..../index.php'">Regresar al inicio</button>
+            <button onclick="window.location.href='../../index.php'">Regresar al inicio</button>
             <button onclick="window.location.href='../public/pedidos/pedidos_lista.php'">Agregar al carrito</button>
         </div>
     </div>
