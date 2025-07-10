@@ -4,18 +4,19 @@ $con = conecta();
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-// Obtener los detalles del producto
-$sql = "SELECT * FROM productos WHERE id_producto = $id AND eliminado = 0";
-$res = $con->query($sql);
+// Consulta con parámetros para evitar SQL Injection
+$sql = "SELECT * FROM productos WHERE id_producto = $1 AND eliminado = 0";
+$result = pg_query_params($con, $sql, [$id]);
 
-if ($res->num_rows == 0) {
+if (!$result || pg_num_rows($result) === 0) {
     die("Producto no encontrado o eliminado.");
 }
 
-$row = $res->fetch_assoc();
+$row = pg_fetch_assoc($result);
 
-include '../Menu.php';
+include '../public/administrador/menu2.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
