@@ -115,22 +115,7 @@ if (isset($_SESSION['correo'])) {
 
         <!-- Botones en una fila -->
         <div class="button-row">
-            <form action="../Promociones/promociones_lista.php" method="GET">
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                <button type="submit">Promociones</button>
-            </form>
-            
-            <form action="../Productos/productos_lista.php" method="GET">
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                <button type="submit">Productos</button>
-            </form>
-            
-            <form action="/Pagina/administrador/empleados_lista.php" method="GET">
-                <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
-                <button type="submit">Empleados</button>
-            </form>
-            
-            <form action="/Pagina/administrador/index.php" method="GET" class="logout-button">
+            <form action="../public/administrador/index.php" method="GET" class="logout-button">
                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
                 <button type="submit">Iniciar sesión</button>
             </form>
