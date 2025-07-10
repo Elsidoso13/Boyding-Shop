@@ -1,23 +1,22 @@
-# Dockerfile
 FROM php:8.1-apache
 
-# Instalar extensiones necesarias para PostgreSQL
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    && docker-php-ext-install pdo pdo_pgsql
+# Habilitar extensiones PHP necesarias (para bases de datos)
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
-# Habilitar mod_rewrite de Apache
-RUN a2enmod rewrite
+# Crear la estructura de carpetas que tu código espera
+RUN mkdir -p /var/www/html/Pagina
 
-# Copiar archivos del proyecto al directorio web de Apache
-COPY . /var/www/html/
+# Copiar todos los archivos a la carpeta Pagina
+COPY . /var/www/html/Pagina/
 
-# Configurar permisos
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 755 /var/www/html
+# Configurar Apache para que el DocumentRoot sea /var/www/html/Pagina
+ENV APACHE_DOCUMENT_ROOT /var/www/html/Pagina
+RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
+RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
-# Exponer puerto 80
+# Dar permisos correctos
+RUN chown -R www-data:www-data /var/www/html/
+RUN chmod -R 755 /var/www/html/
+
 EXPOSE 80
-
-# Comando para iniciar Apache
 CMD ["apache2-foreground"]
