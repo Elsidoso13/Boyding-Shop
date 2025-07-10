@@ -109,7 +109,7 @@ if (isset($_SESSION['correo'])) {
         <!-- Logo central -->
         <div class="center-logo">
             <a href="/Pagina/administrador/bienvenido.php">
-                <img src="/Pagina/administrador/SRC2.png" width="10%" alt="Inicio">
+                <img src="/administrador/SRC2.png" width="10%" alt="Inicio">
             </a>
         </div>
 
