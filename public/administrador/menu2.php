@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/Pagina/funciones/conecta.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/funciones/conecta.php';
 $con = conecta();
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
