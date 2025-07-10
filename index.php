@@ -199,7 +199,7 @@ $usuario = $_SESSION["id"] ?? null;
                             Agregar al carrito
                         </button>
                     </form>
-                    <form action="/public/productos/detalle_producto.php" method="GET">
+                    <form action="/public/Productos/detalle_producto.php" method="GET">
                         <input type="hidden" name="id" value="<?php echo $row['id_producto']; ?>">
                         <button type="submit">Detalles del producto</button>
                     </form>
