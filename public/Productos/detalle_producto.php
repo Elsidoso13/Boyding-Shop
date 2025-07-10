@@ -1,6 +1,9 @@
 <?php
-require "../funciones/conecta.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . '/funciones/conecta.php';
 $con = conecta();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
